@@ -140,51 +140,51 @@ public class MyDate {
 
     public void printFormatDate(String msg) {
         String s;
-        if (msg == "ddmmyy") {
-            if (day < 10 && month < 10 && year % 100 < 10)
-                s = "0" + day + "/0" + month + "/0" + year % 100;
-            else if (day < 10 && month < 10)
-                s = "0" + day + "/0" + month + "/" + year % 100;
-            else if (day < 10 && year % 100 < 10)
-                s = "0" + day + "/" + month + "/0" + year % 100;
-            else if (year % 100 < 10 && month < 10)
-                s = day + "/0" + month + "/0" + year % 100;
-            else if (day < 10)
-                s =  "0" + day + "/" + month + "/" + year % 100;
-            else if (month < 10)
-                s =  day + "/0" + month + "/" + year % 100;
-            else if (year % 100 < 10)
-                s = day + "/" + month + "/0" + year % 100;
-            else
-                s = day + "/" + month + "/" + year % 100;
-            System.out.println(s);
+        switch (msg) {
+            case "ddmmyy" -> {
+                if (day < 10 && month < 10 && year % 100 < 10)
+                    s = "0" + day + "/0" + month + "/0" + year % 100;
+                else if (day < 10 && month < 10)
+                    s = "0" + day + "/0" + month + "/" + year % 100;
+                else if (day < 10 && year % 100 < 10)
+                    s = "0" + day + "/" + month + "/0" + year % 100;
+                else if (year % 100 < 10 && month < 10)
+                    s = day + "/0" + month + "/0" + year % 100;
+                else if (day < 10)
+                    s = "0" + day + "/" + month + "/" + year % 100;
+                else if (month < 10)
+                    s = day + "/0" + month + "/" + year % 100;
+                else if (year % 100 < 10)
+                    s = day + "/" + month + "/0" + year % 100;
+                else
+                    s = day + "/" + month + "/" + year % 100;
+                System.out.println(s);
+            }
+            case "ddmmyyyy" -> System.out.println(this);
+            case "mmddyyyy" -> {
+                if (day < 10 && month < 10)
+                    s = "0" + month + "/0" + day + "/" + year;
+                else if (day < 10)
+                    s = month + "/0" + day + "/" + year;
+                else if (month < 10)
+                    s = "0" + month + "/" + day + "/" + year;
+                else
+                    s = month + "/" + day + "/" + year;
+                System.out.println(s);
+            }
+            case "yyyymmdd" -> {
+                if (day < 10 && month < 10)
+                    s = year + "/0" + month + "/" + day;
+                else if (day < 10)
+                    s = year + "/" + month + "/0" + day;
+                else if (month < 10)
+                    s = year + "/0" + month + "/" + day;
+                else
+                    s = year + "/" + month + "/" + day;
+                System.out.println(s);
+            }
+            case "ddMMyyyy" -> printMonthName();
         }
-        else if (msg == "ddmmyyyy")
-            System.out.println(this);
-        else if (msg == "mmddyyyy") {
-            if (day < 10 && month < 10)
-                s =  "0" + month + "/0" + day + "/" + year;
-            else if (day < 10)
-                s =  month + "/0" + day + "/" + year;
-            else if (month < 10)
-                s =  "0" + month + "/" + day + "/" + year;
-            else
-                s = month + "/" + day + "/"  + year;
-            System.out.println(s);
-        }
-        else if (msg == "yyyymmdd") {
-            if (day < 10 && month < 10)
-                s =  year + "/0" + month + "/" + day;
-            else if (day < 10)
-                s =  year + "/" + month + "/0" + day;
-            else if (month < 10)
-                s =  year + "/0" + month + "/" + day;
-            else
-                s =  year + "/" + month + "/" + day;
-            System.out.println(s);
-        }
-        else if (msg == "ddMMyyyy")
-            printMonthName();
     }
 
     public int compareDate(MyDate d) {
@@ -192,12 +192,10 @@ public class MyDate {
             return 0;
         if (year > d.year || (year == d.year && month > d.month) || (year == d.year && month == d.month && day > d.day))
             return 1;
-        if (year < d.year || month < d.month)
-            return -1;
         return -1;
     }
 
     public boolean equals(MyDate d) {
-        return d.day == day && d.month == month && d.year == year;
+        return day == d.day && month == d.month && year == d.year;
     }
 }
