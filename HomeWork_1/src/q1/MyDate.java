@@ -187,15 +187,19 @@ public class MyDate {
         }
     }
 
-    public int compareDate(MyDate d) {
-        if (equals(d))
+    public int compareDate(MyDate myDate) {
+        if (equals(myDate))
             return 0;
-        if (year > d.year || (year == d.year && month > d.month) || (year == d.year && month == d.month && day > d.day))
+        if (year > myDate.year || (year == myDate.year && month > myDate.month) || (year == myDate.year && month == myDate.month && day > myDate.day))
             return 1;
         return -1;
     }
 
-    public boolean equals(MyDate d) {
-        return day == d.day && month == d.month && year == d.year;
+    public boolean equals(MyDate myDate) {
+        if (this == myDate)
+            return true;
+        if (myDate == null || getClass() != myDate.getClass())
+            return false;
+        return day == myDate.day && month == myDate.month && year == myDate.year;
     }
 }
