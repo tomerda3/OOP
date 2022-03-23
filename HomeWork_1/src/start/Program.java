@@ -1,6 +1,6 @@
 package start;
 import q1.MyDate;
-
+import q2.Location;
 public class Program {
     public static void main(String[] args) {
 
@@ -26,6 +26,32 @@ public class Program {
         arr[3]=new MyDate();
         System.out.println(Utility.threeDates(arr));
 
-
+        //2.
+        System.out.println("---------- q2 ----------");
+        Location[] arr2 = { new Location("Tel-Aviv"), new Location("London"),
+                new Location("Paris"), new Location("Berlin") };
+        arr2[0].addTemp(12);
+        arr2[0].addTemp(14, 1, 2, 2022);
+        arr2[0].addTemp(21, 28, 1, 2022);
+        arr2[0].addTemp(30, 12, 3, 2022);
+        arr2[1].addTemp(25, 28, 2, 2022);
+        arr2[1].addTemp(10);
+        arr2[1].addTemp(14, 10, 1, 2022);
+        arr2[1].addTemp(17, 9, 2, 2022);
+        arr2[1].addTemp(14, 31, 12, 2021);
+        arr2[1].addTemp(11, 2, 3, 2022);
+        arr2[2].addTemp(27, 4, 2, 2022);
+        arr2[2].addTemp(25, 8, 2, 2022);
+        for (Location x : arr2)
+            x.printLocation();
+        System.out.println("max aveare temp of: ");
+        arr2[Utility.getMaxTemp(arr2)].printLocation();
+        System.out.println("average temperature is: " +
+                (int) arr2[Utility.getMaxTemp(arr2)].getAverage() + (char) 176 + "C");
+        System.out.print("max temperature of " + arr2[1].getName() + ": ");
+        arr2[1].getMax().printTempFull();
+        System.out.println("\ntemperatures close to average: " +
+                (int) arr2[1].getAverage() + (char) 176 + "C");
+        arr2[1].printLocation(2);
     }
 }
