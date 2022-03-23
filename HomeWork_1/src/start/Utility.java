@@ -70,9 +70,7 @@ public class Utility {
         for (int i =0; i<arr.length; i++){
 
             for (int j = 0; j < arr.length; j++) {
-
-
-
+                
             }
         }
     }
