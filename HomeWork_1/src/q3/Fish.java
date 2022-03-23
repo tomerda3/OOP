@@ -59,4 +59,8 @@ public class Fish extends Swimmable {
         if(col == 10)
             col = 1;
     }
+
+    public void printSwimmable(){
+        System.out.println(getAnimalName()+"\t"+getColor()+"\t"+getSize()+"\t"+getEatCount());
+    }
 }
