@@ -4,8 +4,10 @@ import q2.Location;
 public class Program {
     public static void main(String[] args) {
 
-        MyDate date1=new MyDate(31,03,2022);
-        MyDate date2=new MyDate(29,02,2022);
+        //1.
+        System.out.println("---------- q1 ----------\n");
+        MyDate date1=new MyDate(31, 3,2022);
+        MyDate date2=new MyDate(29,2,2022);
         System.out.println(date1);
         date2.printDate();System.out.println();
         date1.printMonthName();System.out.println();
@@ -27,7 +29,7 @@ public class Program {
         System.out.println(Utility.threeDates(arr));
 
         //2.
-        System.out.println("---------- q2 ----------");
+        System.out.println("\n---------- q2 ----------\n");
         Location[] arr2 = { new Location("Tel-Aviv"), new Location("London"),
                 new Location("Paris"), new Location("Berlin") };
         arr2[0].addTemp(12);
@@ -44,7 +46,7 @@ public class Program {
         arr2[2].addTemp(25, 8, 2, 2022);
         for (Location x : arr2)
             x.printLocation();
-        System.out.println("max aveare temp of: ");
+        System.out.println("max average temp of: ");
         arr2[Utility.getMaxTemp(arr2)].printLocation();
         System.out.println("average temperature is: " +
                 (int) arr2[Utility.getMaxTemp(arr2)].getAverage() + (char) 176 + "C");
