@@ -1,17 +1,16 @@
 package q3;
 
-public class MultiColorFish extends Fish{
+public class MultiColorFish extends Fish {
 
-    public MultiColorFish(int distance_eat, int size, int col, int x_front, int y_front){
-        super(distance_eat, size, col, x_front, y_front);
+    public MultiColorFish(int horSpeed, int verSpeed,int distance_eat, int size, int col, int x_front, int y_front){
+        super(horSpeed, verSpeed, distance_eat, size, col, x_front, y_front);
     }
 
     @Override
     public void eatInc() {
-        int max;
-        max= super.getEatCount();
+        int size = super.getEatCount();
         super.eatInc();
-        if (super.getEatCount() < max)
+        if (super.getEatCount() < size)
             super.changeColor();
     }
 
