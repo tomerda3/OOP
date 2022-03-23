@@ -1,6 +1,7 @@
 package q2;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Location {
 
@@ -19,14 +20,19 @@ public class Location {
         this.name = name;
     }
 
-    public void printLocation() {
-        System.out.print(name + "temperature measurements: ");
+    @Override
+    public String toString() {
+        String s = name + "temperature measurements: ";
         if (temp != null)
             for (Temperature temperature : temp)
-                System.out.print(temperature + "|");
+                s += temperature + "|";
         else
-            System.out.print("no temperature measurements available.");
-        System.out.println();
+            s += "no temperature measurements available.";
+        return s;
+    }
+
+    public void printLocation() {
+        System.out.println(this);
     }
 
     public void printLocation(double n) {
@@ -77,5 +83,13 @@ public class Location {
             if (max.getScale() < temp[i].getScale())
                 max = new Temperature(temp[i]);
         return max;
+    }
+
+    public boolean equals(Location location) {
+        if (this == location)
+            return true;
+        if (location == null || getClass() != location.getClass())
+            return false;
+        return name == location.name && Arrays.equals(temp, location.temp);
     }
 }
