@@ -3,8 +3,8 @@ package start;
 import q1.MyDate;
 import q2.Location;
 import q3.Swimmable;
-
 import java.util.Random;
+
 public class Utility {
 
     public static MyDate threeDates(MyDate [] dates) {
@@ -39,14 +39,13 @@ public class Utility {
         return index;
     }
 
-    public void printAquarium(Swimmable[] arr){
-
+    public void printAquarium(Swimmable[] arr) {
         System.out.println("Aquarium[type/color/actual size/eat count]:");
         for (Swimmable swimmable : arr)
             swimmable.printSwimmable();
     }
 
-    public void feedAquaticAnimal(Swimmable[] arr, int feed){
+    public void feedAquaticAnimal(Swimmable[] arr, int feed) {
         Random rand = new Random();
         for(int i=0; i<feed; i++){
             int rand1 = rand.nextInt(arr.length);
@@ -54,22 +53,18 @@ public class Utility {
         }
     }
 
-    public int countAquaticAnimal(Swimmable[] arr){
-        int count=0;
-        for (int i=0; i<arr.length; i++ ){
-            if (arr[0].getSize() < arr[i].getSize())
+    public int countAquaticAnimal(Swimmable[] arr) {
+        int count = 0;
+        for (Swimmable swimmable : arr)
+            if (arr[0].getSize() < swimmable.getSize())
                 count++;
-        }
         return count;
     }
 
-    public void sortAquaticAnimal(Swimmable[]arr){
-
-        for (int i =0; i<arr.length; i++){
-
-            for (int j = 0; j < arr.length; j++) {
-
-            }
-        }
-    }
+//    public void sortAquaticAnimal(Swimmable[]arr) {
+//        for (int i =0; i<arr.length; i++) {
+//            for (int j = 0; j < arr.length; j++) {
+//            }
+//        }
+//    }
 }
