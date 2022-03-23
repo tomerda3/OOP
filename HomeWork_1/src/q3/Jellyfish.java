@@ -51,7 +51,5 @@ public class Jellyfish extends Swimmable{
             size++;
         }
     }
-    public void printSwimmable(){
-        System.out.println(getAnimalName()+"\t"+getColor()+"\t"+getSize()+"\t"+getEatCount());
-    }
+
 }
