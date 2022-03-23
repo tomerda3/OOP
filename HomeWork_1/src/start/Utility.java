@@ -42,8 +42,8 @@ public class Utility {
     public void printAquarium(Swimmable[] arr){
 
         System.out.println("Aquarium[type/color/actual size/eat count]:");
-        for (int i =0; i< arr.length;i++)
-            arr[i].printSwimmable();
+        for (Swimmable swimmable : arr)
+            swimmable.printSwimmable();
     }
 
     public void feedAquaticAnimal(Swimmable[] arr, int feed){
@@ -55,9 +55,7 @@ public class Utility {
     }
 
     public int countAquaticAnimal(Swimmable[] arr){
-
         int count=0;
-
         for (int i=0; i<arr.length; i++ ){
             if (arr[0].getSize() < arr[i].getSize())
                 count++;
@@ -70,7 +68,7 @@ public class Utility {
         for (int i =0; i<arr.length; i++){
 
             for (int j = 0; j < arr.length; j++) {
-                
+
             }
         }
     }
