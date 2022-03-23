@@ -6,9 +6,13 @@ public class Fish extends Swimmable {
     private int size;
     private int col;
     private int eatCount;
-    private int x_front, y_front, x_dir, y_dir;
+    private int x_front;
+    private int y_front;
+    private int x_dir;
+    private int y_dir;
 
-    public Fish(int distance_eat, int size, int col, int x_front, int y_front) {
+    public Fish(int horSpeed, int verSpeed, int distance_eat, int size, int col, int x_front, int y_front) {
+        super(horSpeed, verSpeed);
         DISTANCE_EAT = distance_eat;
         this.size = size;
         this.col = col;
@@ -60,5 +64,27 @@ public class Fish extends Swimmable {
             col = 1;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "Fish{" +
+                "DISTANCE_EAT=" + DISTANCE_EAT +
+                ", size=" + size +
+                ", col=" + col +
+                ", eatCount=" + eatCount +
+                ", x_front=" + x_front +
+                ", y_front=" + y_front +
+                ", x_dir=" + x_dir +
+                ", y_dir=" + y_dir +
+                '}';
+    }
 
+    public boolean equals(Fish fish) {
+        if (this == fish)
+            return true;
+        if (fish == null || getClass() != fish.getClass())
+            return false;
+        if (!super.equals(fish))
+            return false;
+        return DISTANCE_EAT == fish.DISTANCE_EAT && size == fish.size && col == fish.col && eatCount == fish.eatCount && x_front == fish.x_front && y_front == fish.y_front && x_dir == fish.x_dir && y_dir == fish.y_dir;
+    }
 }
