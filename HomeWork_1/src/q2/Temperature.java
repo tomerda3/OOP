@@ -62,7 +62,12 @@ public class Temperature {
         return this;
     }
 
-    public boolean equal(Temperature other) {
-        return other.scale == scale;
+    public boolean equals(Temperature temperature) {
+        if (this == temperature)
+            return true;
+        if (temperature == null || getClass() != temperature.getClass())
+            return false;
+        return scale == temperature.getScale() && scale_date.equals(temperature.scale_date);
     }
+
 }
