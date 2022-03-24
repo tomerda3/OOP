@@ -2,8 +2,8 @@ package q3;
 
 public class MultiColorFish extends Fish {
 
-    public MultiColorFish(int horSpeed, int verSpeed,int distance_eat, int size, int col, int x_front, int y_front){
-        super(horSpeed, verSpeed, distance_eat, size, col, x_front, y_front);
+    public MultiColorFish(int size, int horSpeed, int verSpeed, int x_front, int y_front, int col){
+        super(size,horSpeed, verSpeed, x_front, y_front, col);
     }
 
     @Override

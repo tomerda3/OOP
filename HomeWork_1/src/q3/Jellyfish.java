@@ -11,9 +11,9 @@ public class Jellyfish extends Swimmable {
     private int x_dir;
     private int y_dir;
 
-    public Jellyfish(int horSpeed, int verSpeed, int distance_eat, int size, int col, int x_front, int y_front) {
+    public Jellyfish(int size, int horSpeed, int verSpeed, int x_front, int y_front, int col) {
         super(horSpeed, verSpeed);
-        DISTANCE_EAT = distance_eat;
+        //DISTANCE_EAT = distance_eat;
         this.size = size;
         this.col = col;
         this.eatCount = 0;
