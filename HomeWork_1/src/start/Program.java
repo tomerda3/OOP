@@ -5,7 +5,7 @@ public class Program {
     public static void main(String[] args) {
 
         //1.
-//        System.out.println("---------- q1 ----------\n");
+        System.out.println("---------- q1 ----------\n");
 //        MyDate date1=new MyDate(31, 3,2022);
 //        MyDate date2=new MyDate(29,2,2022);
 //        System.out.println(date1);
@@ -62,12 +62,10 @@ public class Program {
                 new UnusualFish(15, 0, 0, 0, 0, 9,2),new MultiColorFish(20, 0, 0, 0, 0, 2),
                 new Fish(18, 0, 0, 0, 0, 4),new Jellyfish(34, 0, 0, 0, 0, 7)};
         Utility.printAquarium(arr3);
-        Utility.feedAquaticAnimal(arr3, 30);
+        Utility.feedAquaticAnimal(arr3, 50);
         Utility.printAquarium(arr3);
         System.out.println("\ncount: "+Utility.countAquaticAnimal(arr3));
         Utility.sortAquaticAnimal(arr3);
         Utility.printAquarium(arr3);
-
-
     }
 }
