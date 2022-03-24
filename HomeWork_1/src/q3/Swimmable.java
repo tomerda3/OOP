@@ -37,7 +37,11 @@ public abstract class Swimmable implements Comparable {
     public abstract void eatInc();
 
     public void printSwimmable(){
-        System.out.println(getAnimalName() + "\t" + getColor() + "\t" + getSize() + "\t" + getEatCount());
+        System.out.print(getAnimalName());
+        String s = "Fish";
+        if (s.equals(getAnimalName()))
+            System.out.print("\t");
+        System.out.print("\t" + getColor() + "\t" + getSize() + "\t" + getEatCount() + "\n");
     }
 
     @Override
