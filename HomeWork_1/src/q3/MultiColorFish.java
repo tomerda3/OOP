@@ -6,6 +6,10 @@ public class MultiColorFish extends Fish {
         super(size,horSpeed, verSpeed, x_front, y_front, col);
     }
 
+    public String getAnimalName() {
+        return "MultiColorFish";
+    }
+
     @Override
     public void eatInc() {
         int size = super.getEatCount();
