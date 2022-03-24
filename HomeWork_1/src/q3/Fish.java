@@ -48,7 +48,7 @@ public class Fish extends Swimmable {
 
     public void eatInc() {
         eatCount++;
-        if (eatCount > DISTANCE_EAT) {
+        if (eatCount >= DISTANCE_EAT) {
             eatCount = 0;
             size++;
         }
