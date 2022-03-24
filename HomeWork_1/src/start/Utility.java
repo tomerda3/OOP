@@ -41,9 +41,24 @@ public class Utility {
     }
 
     public static void printAquarium(Swimmable[] arr) {
-        System.out.println("Aquarium[type/color/actual size/eat count]:");
-        for (Swimmable swimmable : arr)
-            swimmable.printSwimmable();
+        if (arr == null)
+            System.out.println("Empty array!");
+        else {
+            System.out.println("Aquarium[type/color/actual size/eat count]:");
+            for (Swimmable swimmable : arr) {
+                System.out.print(swimmable.getAnimalName() + "\t");
+                if (swimmable.getAnimalName().equals("Fish"))
+                    System.out.print("\t");
+                if (!swimmable.getAnimalName().equals("MultiColorFish"))
+                    System.out.print("\t");
+                System.out.print(swimmable.getColor() + "\t");
+                if (swimmable.getAnimalName().equals("MultiColorFish") && swimmable.getColor().equals("Red"))
+                    System.out.print("\t");
+                System.out.print(swimmable.getSize() + "\t");
+                System.out.print(swimmable.getEatCount() + "\t\n");
+            }
+            System.out.println();
+        }
     }
 
     public static void feedAquaticAnimal(Swimmable[] arr, int feed) {
@@ -62,7 +77,7 @@ public class Utility {
         return count;
     }
 
-    public static void sortAquaticAnimal(Swimmable[] arr){
+    public static void sortAquaticAnimal(Swimmable[] arr) {
         for (int i = 0; i < arr.length ; i++) {
             Swimmable temp = arr[i];
             int j =i;
