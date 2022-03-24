@@ -90,6 +90,6 @@ public class Location {
             return true;
         if (location == null || getClass() != location.getClass())
             return false;
-        return name == location.name && Arrays.equals(temp, location.temp);
+        return name.equals(location.name) && Arrays.equals(temp, location.temp);
     }
 }
