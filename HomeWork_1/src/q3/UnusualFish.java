@@ -4,7 +4,7 @@ public class UnusualFish extends Fish {
 
     private int factor ;
 
-    public UnusualFish(int size, int horSpeed, int verSpeed, int x_front, int y_front, int factor,int col) {
+    public UnusualFish(int size, int x_front, int y_front, int horSpeed, int verSpeed, int factor,int col) {
         super(size,horSpeed, verSpeed, x_front, y_front, col);
         this.factor = factor;
     }
