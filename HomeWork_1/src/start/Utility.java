@@ -3,6 +3,7 @@ package start;
 import q1.MyDate;
 import q2.Location;
 import q3.Swimmable;
+
 import java.util.Random;
 
 public class Utility {
@@ -59,6 +60,12 @@ public class Utility {
             if (arr[0].getSize() < swimmable.getSize())
                 count++;
         return count;
+    }
+
+    public void sortAquaticAnimal(Swimmable[] arr){
+
+
+
     }
 
 //    public void sortAquaticAnimal(Swimmable[]arr) {
