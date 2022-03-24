@@ -13,7 +13,7 @@ public class Jellyfish extends Swimmable {
 
     public Jellyfish(int size, int x_front, int y_front, int horSpeed, int verSpeed, int col) {
         super(horSpeed, verSpeed);
-        //DISTANCE_EAT = distance_eat;
+        DISTANCE_EAT = 4;
         this.size = size;
         this.col = col;
         this.eatCount = 0;
@@ -48,7 +48,7 @@ public class Jellyfish extends Swimmable {
 
     public void eatInc() {
         eatCount++;
-        if (eatCount > DISTANCE_EAT) {
+        if (eatCount >= DISTANCE_EAT) {
             eatCount = 0;
             size++;
         }
