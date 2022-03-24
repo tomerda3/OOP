@@ -40,21 +40,21 @@ public class Utility {
         return index;
     }
 
-    public void printAquarium(Swimmable[] arr) {
+    public static void printAquarium(Swimmable[] arr) {
         System.out.println("Aquarium[type/color/actual size/eat count]:");
         for (Swimmable swimmable : arr)
             swimmable.printSwimmable();
     }
 
-    public void feedAquaticAnimal(Swimmable[] arr, int feed) {
+    public static void feedAquaticAnimal(Swimmable[] arr, int feed) {
         Random rand = new Random();
-        for(int i=0; i<feed; i++){
+        for(int i=0; i < feed; i++){
             int rand1 = rand.nextInt(arr.length);
             arr[rand1].eatInc();
         }
     }
 
-    public int countAquaticAnimal(Swimmable[] arr) {
+    public static int countAquaticAnimal(Swimmable[] arr) {
         int count = 0;
         for (Swimmable swimmable : arr)
             if (arr[0].getSize() < swimmable.getSize())
@@ -62,16 +62,16 @@ public class Utility {
         return count;
     }
 
-    public void sortAquaticAnimal(Swimmable[] arr){
-
-
-
+    public static void sortAquaticAnimal(Swimmable[] arr){
+        for (int i = 0; i < arr.length ; i++) {
+            Swimmable temp = arr[i];
+            int j =i;
+            while (j > 0 && arr[j-1].getSize() < temp.getSize()){
+                arr[j] = arr[j-1];
+                j--;
+            }
+            arr[j] = temp;
+        }
     }
 
-//    public void sortAquaticAnimal(Swimmable[]arr) {
-//        for (int i =0; i<arr.length; i++) {
-//            for (int j = 0; j < arr.length; j++) {
-//            }
-//        }
-//    }
 }
