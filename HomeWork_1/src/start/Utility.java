@@ -43,7 +43,7 @@ public class Utility {
         return new MyDate();
     }
     /**
-     * Static function which receives as an parameter an array of locations with
+     * Static function which receives as a parameter an array of locations with
      * Temperature measurements and returns an index in an array of location with the maximum average temperature.
      */
     public static int getMaxTemp(Location [] arr) {
