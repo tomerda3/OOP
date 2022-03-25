@@ -145,7 +145,7 @@ public class MyDate {
      * object function that print the date.
      * using the tostring func
      *
-     *@see  toString that return string of the date and then we print it.
+     *@see  //toString that return string of the date and then we print it.
      *
      */
     public void printDate() {
@@ -167,7 +167,7 @@ public class MyDate {
      * object function that return in int the days that can be in moths.
      * here we check is the year is leap.
      *
-     *@see  isLeapYear check if its leap year.
+     *@see  //isLeapYear check if its leap year.
      *
      */
     public int getMonthDay() {
@@ -202,7 +202,7 @@ public class MyDate {
     /**
      * object function that print the date by spesific format we use here message passing.
      *
-     * @see printMonthName print the month.
+     * @see //printMonthName print the month.
      *
      */
     public void printFormatDate(String msg) {
@@ -258,7 +258,7 @@ public class MyDate {
      * there is 3 option : equal, before or after.
      *
      * @return 0 if eual 1 if that date after and -1 if the date before.
-     * @see equals check if the same dates.
+     * @see //equals check if the same dates.
      *
      */
     public int compareDate(MyDate myDate) {
@@ -273,7 +273,7 @@ public class MyDate {
      * it boolean function that return ture if the same or false is not.
      *
      * @return return ture if the same dates or false is not.
-     * @see getClass check if the same Class.
+     * @see //getClass check if the same Class.
      *
      */
     public boolean equals(MyDate myDate) {
