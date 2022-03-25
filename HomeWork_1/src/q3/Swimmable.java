@@ -1,5 +1,11 @@
 package q3;
 
+/**
+ * An abstract class (it has no instances) that represents objects that can swim.
+ * @see Comparable
+ * @see Fish
+ * @see Jellyfish
+ */
 public abstract class Swimmable implements Comparable {
 
     protected int horSpeed;
@@ -30,20 +36,19 @@ public abstract class Swimmable implements Comparable {
         return true;
     }
 
+    /**
+     * Abstract functions that any object that can swim must realize.
+     */
     public abstract String getAnimalName();
     public abstract int getEatCount();
     public abstract int getSize();
     public abstract String getColor();
     public abstract void eatInc();
 
-    public void printSwimmable(){
-        System.out.print(getAnimalName());
-        String s = "Fish";
-        if (s.equals(getAnimalName()))
-            System.out.print("\t");
-        System.out.print("\t" + getColor() + "\t" + getSize() + "\t" + getEatCount() + "\n");
-    }
-
+    /**
+     * A function that returns a string with all class fields and their values.
+     * @return String.
+     */
     @Override
     public String toString() {
         return "Swimmable{" +
@@ -52,6 +57,12 @@ public abstract class Swimmable implements Comparable {
                 '}';
     }
 
+    /**
+     * A function that compares instances of "Swimmable",
+     * first if the input object is the same instance then if it is empty or not fish then compares all the fields.
+     * @param swimmable - Appearance of the "Swimmable" department for comparison.
+     * @return True if the instances are the same otherwise false.
+     */
     public boolean equals(Swimmable swimmable) {
         if (this == swimmable)
             return true;
