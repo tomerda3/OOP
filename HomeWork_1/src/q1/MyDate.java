@@ -1,12 +1,27 @@
 package q1;
 
 import java.time.LocalDate;
+/**
+ * A Class to save dates by year,month and day
+ * standard input, or local time that take the current time
+ *
+ * @version 1.0 25 Mar 2022
+ * @author  Tomer Damti, Nave Sfunim
+ * @see     //Temperature
+ */
 
 public class MyDate {
 
     private int day;
     private int month;
     private int year;
+
+    /**
+     * Builder build the object incase there is no input.
+     * it insert to the fuild the current time
+     *
+     * @see MyDate
+     */
 
     public MyDate() { //Default Constructor
         LocalDate date = LocalDate.now();
@@ -15,6 +30,12 @@ public class MyDate {
         this.year = date.getYear();
     }
 
+    /**
+     * Builder build the object incase there is input..
+     * The input is insert from outside here
+     *
+     * @param d, m, y
+     */
     public MyDate(int d, int m, int y) { //Constructor
         LocalDate date = LocalDate.now();
         this.day = 0;
@@ -27,13 +48,21 @@ public class MyDate {
         if (!setDay(d))
             this.day = date.getDayOfMonth();
     }
-
+    /**
+     * Copy constructor
+     * copy the values
+     *
+     * @param other
+     *        the prompt string to display
+     *
+     * @see MyDate
+     */
     public MyDate(MyDate other) { //Copy Constructor
         this.year = other.getYear();
         this.month = other.getMonth();
         this.day = other.getDay();
     }
-
+// function that return the day
     public int getDay() {
         return day;
     }
@@ -45,10 +74,21 @@ public class MyDate {
         }
         return false;
     }
-
+// function that return the month
     public int getMonth() {
         return month;
     }
+
+    /**
+     * object function that set the month.
+     * keep on comsulation.
+     *
+     * @param month
+     *        the prompt int to set
+     *
+     * @return boolean to show if the set has succed or not
+     *
+     */
 
     public boolean setMonth(int month) {
         if (day == 31 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11))
@@ -70,7 +110,7 @@ public class MyDate {
         }
         return false;
     }
-
+// function that return the obj year field in int
     public int getYear() {
         return year;
     }
@@ -84,7 +124,13 @@ public class MyDate {
         }
         return false;
     }
-
+    /**
+     * object function that return a String of the dates field.
+     *
+     *
+     * @return String of the objects
+     *
+     */
     @Override
     public String toString() {
         if (day < 10 && month < 10)
@@ -95,11 +141,21 @@ public class MyDate {
             return day + "/0" + month + "/" + year;
         return day + "/" + month + "/" + year;
     }
-
+    /**
+     * object function that print the date.
+     * using the tostring func
+     *
+     *@see  toString that return string of the date and then we print it.
+     *
+     */
     public void printDate() {
         System.out.println(this);
     }
-
+    /**
+     * object function that print the date
+     * by month name.
+     *
+     */
     public void printMonthName() {
         String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         if (day < 10)
@@ -107,7 +163,13 @@ public class MyDate {
         else
             System.out.println(day + " " + months[month-1] + " " + year);
     }
-
+    /**
+     * object function that return in int the days that can be in moths.
+     * here we check is the year is leap.
+     *
+     *@see  isLeapYear check if its leap year.
+     *
+     */
     public int getMonthDay() {
         if (month == 4 || month == 6 || month == 9 || month == 11)
             return 30;
@@ -118,7 +180,7 @@ public class MyDate {
         }
         return 31;
     }
-
+// function that check if its leap year calaculte by formola that show here return true/false.
     public boolean isLeapYear() {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
@@ -137,7 +199,12 @@ public class MyDate {
         }
         return d;
     }
-
+    /**
+     * object function that print the date by spesific format we use here message passing.
+     *
+     * @see printMonthName print the month.
+     *
+     */
     public void printFormatDate(String msg) {
         String s;
         switch (msg) {
@@ -186,7 +253,14 @@ public class MyDate {
             case "ddMMyyyy" -> printMonthName();
         }
     }
-
+    /**
+     * object function that compare diffrent date.
+     * there is 3 option : equal, before or after.
+     *
+     * @return 0 if eual 1 if that date after and -1 if the date before.
+     * @see equals check if the same dates.
+     *
+     */
     public int compareDate(MyDate myDate) {
         if (equals(myDate))
             return 0;
@@ -194,7 +268,14 @@ public class MyDate {
             return 1;
         return -1;
     }
-
+    /**
+     * object function that check if the same dates.
+     * it boolean function that return ture if the same or false is not.
+     *
+     * @return return ture if the same dates or false is not.
+     * @see getClass check if the same Class.
+     *
+     */
     public boolean equals(MyDate myDate) {
         if (this == myDate)
             return true;
