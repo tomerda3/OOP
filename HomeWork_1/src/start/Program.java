@@ -2,9 +2,26 @@ package start;
 import q1.*;
 import q2.*;
 import q3.*;
+
+/**
+ * A Class that run the main.
+ * in the main we create all the Class object and work with them to run he program output.
+ *
+ * @version 1.0 25 Mar 2022
+ * @author  Tomer Damti, Nave Sfunim
+ * @see     //Temperature
+ */
 public class Program {
     public static void main(String[] args) {
 
+        /**
+         * part 1:
+         * In the start package, create a Utility class to add static functions and add a static function to it.
+         * I will create class objects of Dates in static main function: MyDate class and later Other departments.
+         * Named threeDates which receives as a parameter an array of dates and searches for and returns the date for which in the array there are two
+         * Additional dates that make up a series of three consecutive dates. If there is no such date the function returns the date
+         * Current.
+         */
         //1.
         System.out.println("---------- q1 ----------\n");
         MyDate date1=new MyDate(31, 3,2022);
@@ -29,6 +46,12 @@ public class Program {
         arr[3]=new MyDate();
         System.out.println(Utility.threeDates(arr));
 
+        /**
+         * part 2:
+         * In this part we build Location with a class called Temperature,Location both in package q2,
+         * that allows you to store a temperature measurement measured in degrees Celsius by
+         * date.
+         */
         //2.
         System.out.println("\n---------- q2 ----------\n");
         Location[] arr2 = { new Location("Tel-Aviv"), new Location("London"),
@@ -58,6 +81,11 @@ public class Program {
         arr2[1].printLocation(2);
 
         //3.
+        /**
+         * Here we writing classes that describe sea creatures in an aquarium.
+         * we create an abstract class called Swimmable in a q3 package that will serve as a base class for other classes,
+         * and implement an interface.
+         */
         System.out.println("\n---------- q3 ----------\n");
         Swimmable[] arr3= {new Fish(20, 0, 0, 0, 0, 6),new Jellyfish(10, 0, 0, 0, 0, 8),
                 new UnusualFish(15, 0, 0, 0, 0, 9,2),new MultiColorFish(20, 0, 0, 0, 0, 2),
