@@ -6,8 +6,24 @@ import q3.Swimmable;
 
 import java.util.Random;
 
+
+/**
+ * A Utility Class that run diffrent assaigment in aquarioum and Mydate
+ * we use deffrent calculation to preform diffrent things within the class.
+ * @version 1.0 25 Mar 2022
+ * @author  Tomer Damti, Nave Sfunim
+ * @see     MyDate Swimmable Location
+ */
 public class Utility {
 
+
+
+    /**
+     * Static function
+     * Named threeDates which receives as a parameter an array of dates and searches for and returns the date for which in the array there are two
+     * Additional dates that make up a series of three consecutive dates. If there is no such date the function returns the date
+     * Current
+     */
     public static MyDate threeDates(MyDate [] dates) {
         MyDate temp1, temp2;
         int count;
@@ -26,7 +42,10 @@ public class Utility {
         }
         return new MyDate();
     }
-
+    /**
+     * Static function which receives as an parameter an array of locations with
+     * Temperature measurements and returns an index in an array of location with the maximum average temperature.
+     */
     public static int getMaxTemp(Location [] arr) {
         if (arr.length == 0)
             return -1;
@@ -39,7 +58,9 @@ public class Utility {
             }
         return index;
     }
-
+    /**
+     * Static function which receives as a parameter an array of sea creatures in the aquarium and prints them.
+     */
     public static void printAquarium(Swimmable[] arr) {
         if (arr == null)
             System.out.println("Empty array!");
@@ -60,7 +81,10 @@ public class Utility {
             System.out.println();
         }
     }
-
+    /**
+     * Static function which receives as parameters an array of sea creatures in the aquarium and the amount of food and feeds sea creatures
+     * In the aquarium at random.
+     */
     public static void feedAquaticAnimal(Swimmable[] arr, int feed) {
         Random rand = new Random();
         for(int i=0; i < feed; i++){
@@ -68,7 +92,10 @@ public class Utility {
             arr[rand1].eatInc();
         }
     }
-
+    /**
+     * Static function which receives as a parameter an array of sea creatures in the aquarium and returns the amount of small sea creatures
+     * The size of the first sea creature in the array.
+     */
     public static int countAquaticAnimal(Swimmable[] arr) {
         int count = 0;
         for (Swimmable swimmable : arr)
@@ -76,7 +103,10 @@ public class Utility {
                 count++;
         return count;
     }
-
+    /**
+     * Static function which receives as an parameter an array of sea creatures in the aquarium and sorts an array according to the size of sea creatures
+     * In descending order.
+     */
     public static void sortAquaticAnimal(Swimmable[] arr) {
         for (int i = 0; i < arr.length ; i++) {
             Swimmable temp = arr[i];
